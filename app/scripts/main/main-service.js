@@ -12,7 +12,7 @@ angular.module('aanwezigheidsbord')
 
             function createAanwezige(aanwezige) {
 
-                var newAanwezige = {naam: aanwezige.naam};
+                var newAanwezige = ['Daan'];
 
                 // POST /accounts
                 aanwezigen.post(newAanwezige);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aanwezigheidsbord')
-  .controller('MainCtrl', function ($scope, MainService) {
+  .controller('MainCtrl', ['$scope', 'MainService', function ($scope, MainService) {
     
- 
-  });
+    $scope.aanwezigen = ['Daan'];
+  }]);
