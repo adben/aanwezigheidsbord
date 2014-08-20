@@ -40,7 +40,7 @@ angular.module('aanwezigheidsbord')
                 var newAanwezige = [aanwezige.naam];
 
                 // POST /accounts
-                aanwezigen.post(newAanwezige).then(function(response) {
+                Restangular.one(baseUrl, name).get().then (function(response) {
                     console.log('Object createrd OK');
                     return response;
                 }, function() {
