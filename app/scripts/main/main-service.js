@@ -4,25 +4,27 @@ angular.module('aanwezigheidsbord')
         .service('MainService', function (Restangular) {
             var baseUrl = "http://www.iprofs.nl";
             var aanwezigen = Restangular.all(baseUrl + '/user');
+
             function deleteAanwezige(id) {
                 currentAanwezige = aanwezigen[id];
             }
+
             function createAanwezige(aanwezige) {
 
                 var newAanwezige = {naam: aanwezige.naam};
 
                 // POST /accounts
                 aanwezigen.post(newAanwezige);
+            }
 
+            function getAanwezigen(){
+                 return aanwezigen;
             }
 
             return {
-                getAanwezigen: function () {
-                    return aanwezigen;
-                }
-                deleteAanwezige: function(name) {
-
-                }
+                deleteAanwezige : deleteAanwezige,
+                createAanwezige: createAanwezige,
+                getAanwezigen: getAanwezigen
             };
             // This will query /accounts and return a promise.
             aanwezigen.getList().then(function(aanwezigen) {
