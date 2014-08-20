@@ -5,8 +5,9 @@ angular.module('aanwezigheidsbord')
             var baseUrl = "http://www.iprofs.nl";
             var aanwezigen = Restangular.all(baseUrl + '/user');
 
-            function deleteAanwezige(id) {
-                currentAanwezige = aanwezigen[id];
+            function deleteAanwezige(name) {
+                // Route: /user/<name> DELETE: Returns Status 200/OK + Optionally a message when the user was already gone
+                currentAanwezige = aanwezigen[name];
             }
 
             function createAanwezige(aanwezige) {
@@ -26,10 +27,7 @@ angular.module('aanwezigheidsbord')
                 createAanwezige: createAanwezige,
                 getAanwezigen: getAanwezigen
             };
-            // This will query /accounts and return a promise.
-            aanwezigen.getList().then(function(aanwezigen) {
-                $scope.aanwezigen = aanwezigen;
-            });
+
         });
             /*
             Route: /user POST: With body {"name:"..."}: Returns Status 201/CREATED + Optionally a message when the user is already there
