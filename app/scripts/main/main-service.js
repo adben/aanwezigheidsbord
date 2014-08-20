@@ -2,30 +2,30 @@
 
 angular.module('aanwezigheidsbord')
         .service('MainService', ['Restangular', function (Restangular) {
-            var baseUrl = "http://www.iprofs.nl";
+            var baseUrl = 'http://www.iprofs.nl';
             var aanwezigen = Restangular.all(baseUrl + '/user');
 
             function deleteAanwezige(name) {
                 // Route: /user/<name> DELETE: Returns Status 200/OK + Optionally a message when the user was already gone
                 var currentAanwezige = aanwezigen[name];
-                currentAanwezig.remove().then(function(response) {
-                    console.log("Object removed OK");
+                currentAanwezige.remove().then(function(response) {
+                    console.log('Object removed OK');
                     return response;
                 }, function() {
-                    console.log("There was an error deleting");
+                    console.log('There was an error deleting');
                 });
             }
 
             function createAanwezige(aanwezige) {
 
-                var newAanwezige = ['Daan'];
+                var newAanwezige = [aanwezige.naam];
 
                 // POST /accounts
                 aanwezigen.post(newAanwezige).then(function(response) {
-                    console.log("Object createrd OK");
+                    console.log('Object createrd OK');
                     return response;
                 }, function() {
-                    console.log("There was an error creating");
+                    console.log('There was an error creating');
                 });
             }
 
