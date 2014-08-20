@@ -20,3 +20,11 @@ a {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+ul li button {
+    display: none;
+    float: right;
+    :hover {
+        display: inline-block;
+    }
+}

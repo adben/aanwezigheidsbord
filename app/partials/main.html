@@ -2,7 +2,7 @@
     <h1>Aanwezige Medewerkers:</h1>
     <ul>
         <li ng-repeat="aanwezige in aanwezigen">
-            {{aanwezige}}
+            <span>{{aanwezige}}</span><button ng-click="removeAanwezige(aanwezige)">verwijderen</button>
         </li>
     </ul>
 
