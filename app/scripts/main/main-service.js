@@ -6,6 +6,23 @@ angular.module('aanwezigheidsbord')
             // var aanwezigen = Restangular.all(baseUrl + '/user');
             var aanwezigen = ['Daan', 'Frederik', 'Adolfo'];
 
+            Array.prototype.remove = function() {
+                var what, a = arguments, L = a.length, ax;
+                while (L && this.length) {
+                    what = a[--L];
+                    while ((ax = this.indexOf(what)) !== -1) {
+                        this.splice(ax, 1);
+                    }
+                }
+                return this;
+            };
+
+            function deleteAanwezige(name) {
+                aanwezigen.remove(name);
+                return aanwezigen;
+            }
+
+            /*
             function deleteAanwezige(name) {
                 // Route: /user/<name> DELETE: Returns Status 200/OK + Optionally a message when the user was already gone
                 var currentAanwezige = aanwezigen[name];
@@ -16,6 +33,7 @@ angular.module('aanwezigheidsbord')
                     console.log('There was an error deleting');
                 });
             }
+            */
 
             function createAanwezige(aanwezige) {
 
