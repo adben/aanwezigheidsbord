@@ -3,4 +3,6 @@ dist
 .tmp
 .sass-cache
 app/bower_components
+/aanwezigheidsbord/nbproject/private/
+/app/nbproject/private/
 .idea
