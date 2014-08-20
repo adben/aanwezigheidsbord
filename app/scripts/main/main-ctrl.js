@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aanwezigheidsbord')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, MainService) {
     $scope.awesomeThings = [
       {
         'key': 'angular',
