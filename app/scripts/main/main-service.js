@@ -2,8 +2,9 @@
 
 angular.module('aanwezigheidsbord')
         .service('MainService', ['Restangular', function (Restangular) {
-            var baseUrl = 'http://www.iprofs.nl';
-            var aanwezigen = Restangular.all(baseUrl + '/user');
+            var baseUrl = 'http://10.0.0.1';
+            // var aanwezigen = Restangular.all(baseUrl + '/user');
+            var aanwezigen = ['Daan', 'Frederik', 'Adolfo'];
 
             function deleteAanwezige(name) {
                 // Route: /user/<name> DELETE: Returns Status 200/OK + Optionally a message when the user was already gone
